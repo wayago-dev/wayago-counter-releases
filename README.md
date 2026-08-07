@@ -10,7 +10,7 @@ This repository distributes signed Windows builds of the private WAYAGO COUNTER 
 4. Enter the private license key supplied by the administrator. A key binds to the first Windows computer that activates it.
 5. In XDBot, use a GDR macro recorded with Vanilla accuracy, 240 TPS, and Frame Offset 0. WAYAGO COUNTER ignores frame fixes and analyzes with vanilla physics.
 
-The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation.
+The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 
 ## Access
 
