@@ -2,6 +2,19 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.6] - 2026-08-08
+
+### Fixed
+
+- Replaced runtime MP3 effects with trimmed, preloaded PCM WAV resources, removing the codec's approximately 41 ms leading silence.
+- Timing alerts now start on a dedicated FMOD channel, explicitly recover from a paused shared SFX group, and fall back to Geometry Dash's native effect path when direct playback is unavailable.
+- Added one-time channel diagnostics and a clear warning when Geometry Dash's global SFX volume is muted.
+
+### Improved
+
+- Raised the minimum alert gain so 7-10 frame timing sounds remain audible over level music while preserving stronger alerts for narrow windows.
+- Added a two-physics-tick collision tail after continuous-mode control cycles and cube/robot landings, catching boundary hazards that report death just after the nominal causal segment ends.
+
 ## [0.3.5] - 2026-08-08
 
 ### Performance

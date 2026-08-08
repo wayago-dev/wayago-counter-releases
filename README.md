@@ -18,7 +18,7 @@ This repository distributes signed Windows builds of the private WAYAGO COUNTER 
 
 For every format, record at 240 Hz with vanilla physics, disable CBF and physics corrections, then verify the complete route with `PLAY` before starting `ANALYZE`. Mega Hack and Silicate compatibility has not been tested as thoroughly as XDBot.
 
-The exact original eight-file MP3 timing pack is embedded in the mod and preloaded automatically. No separate sound download is required, and it works offline.
+The eight-file timing pack is embedded as trimmed, preloaded PCM WAV audio. No separate sound download is required, alerts avoid MP3 encoder delay, and playback works offline.
 
 The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 
