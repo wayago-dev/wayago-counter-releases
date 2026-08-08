@@ -2,6 +2,14 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.2] - 2026-08-08
+
+### Changed
+
+- Replaced the generated procedural timing tones with the exact original eight-file MP3 sound pack.
+- Packaged every timing sound directly inside the `.geode` release, so no separate download or setup is required.
+- Kept startup preloading for the bundled MP3 files to avoid first-use file loading latency.
+
 ## [0.3.1] - 2026-08-08
 
 ### Fixed
