@@ -2,6 +2,14 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.1] - 2026-08-08
+
+### Fixed
+
+- Backward coordinated input tests now select checkpoints before the earliest changed event instead of the current input.
+- Expected trajectory changes after a paired previous release are no longer reported as pre-input replay drift.
+- Deaths during backward-pair validation are classified against the complete mutation boundary, preventing analysis from aborting on valid macros.
+
 ## [0.3.0] - 2026-08-08
 
 ### Added
