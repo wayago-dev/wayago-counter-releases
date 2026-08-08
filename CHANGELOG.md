@@ -2,6 +2,18 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.4] - 2026-08-08
+
+### Fixed
+
+- Corrected the v0.3.3 regression that reduced valid multi-frame ship and wave timings to isolated 1-2 frame results.
+- Continuous-mode offsets now start with an isolated test and fall back to a coordinated adjacent-edge repair only after a real death.
+- A repaired offset must survive the complete causal control cycle before it can extend the measured window, preventing the short-horizon false passes seen before v0.3.3.
+
+### Diagnostics
+
+- Analysis logs now identify isolated, forward-pair and backward-pair runs and record exactly which full-cycle repair extended a window.
+
 ## [0.3.3] - 2026-08-08
 
 ### Fixed
