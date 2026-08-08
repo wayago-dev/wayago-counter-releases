@@ -2,6 +2,18 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.3] - 2026-08-08
+
+### Fixed
+
+- Frame-window boundaries now shift exactly one input edge, preventing adjacent-edge compensation from inflating real 1-4 frame ship and wave windows into 6-10 frame results.
+- Ship, wave and swing offsets are validated through the next equivalent edge, covering the complete press-release control cycle and catching late collisions in the same corridor.
+- Every checkpoint-derived failure boundary is confirmed by a clean full replay, regardless of the provisional window size.
+
+### Changed
+
+- Alternative full-route candidates remain a separate post-analysis result and can no longer redefine or enlarge an input's measured window.
+
 ## [0.3.2] - 2026-08-08
 
 ### Changed
