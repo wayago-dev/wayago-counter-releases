@@ -2,6 +2,19 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.3.5] - 2026-08-08
+
+### Performance
+
+- Replaced two full-from-start boundary confirmations per input with a short baseline certification of the restored private checkpoint.
+- Certified checkpoints are reused through their verified causal horizon, so normal offset scans resume close to the tested input instead of replaying the level from frame zero.
+- Reduced the default checkpoint spacing from 30 to 18 frames, reduced the guarded input radius from 10 to 4 frames, and raised the default fixed-step analysis speed from 48x to 64x.
+
+### Safety
+
+- Checkpoint certification compares position, velocity, gravity, mode, orientation and grounded state against the original vanilla baseline on every frame.
+- A checkpoint that drifts, dies early or restores an invalid state is discarded automatically and the analyzer retries from an earlier snapshot, falling back to frame zero only when no certified snapshot remains.
+
 ## [0.3.4] - 2026-08-08
 
 ### Fixed
