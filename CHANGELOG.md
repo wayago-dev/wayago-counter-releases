@@ -2,6 +2,18 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.4.1] - 2026-08-09
+
+### Fixed
+
+- Valid one-device licenses now renew normally after a signed mod update even when the same network previously exhausted the denied-key budget.
+- Activation, manual checks and heartbeats share one in-flight request guard and a retry cooldown, preventing accidental request floods.
+- Rate-limited responses now show `TOO MANY REQUESTS` instead of the misleading `SERVER UNAVAILABLE` state.
+
+### Diagnostics
+
+- License failures log only the request type, HTTP status and public error code. Keys, device secrets and full HWIDs remain excluded.
+
 ## [0.4.0] - 2026-08-09
 
 ### Added
