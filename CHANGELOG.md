@@ -2,6 +2,15 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.5.1] - 2026-08-09
+
+### Fixed
+
+- Reduced the main popup from 430x252 to 350x210 game units so it no longer consumes almost the complete Geometry Dash viewport.
+- Replaced the oversized workflow and utility controls with compact, consistently spaced button rows.
+- Replaced the unbounded quick-guide alert with a fixed-size two-column popup, preventing help text from clipping above and below the screen.
+- Shortened status copy and constrained every dynamic label to its available card width.
+
 ## [0.5.0] - 2026-08-09
 
 ### Added
