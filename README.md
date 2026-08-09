@@ -5,10 +5,11 @@ This repository distributes signed Windows builds of the private WAYAGO COUNTER 
 ## Installation
 
 1. Install Geometry Dash 2.2081 and Geode 5.8.2 or newer. XDBot is strongly recommended for recording macros.
-2. Download `wayago.wayago-counter.geode` from the latest release and place it in the Geometry Dash `geode/mods` folder.
-3. Restart Geometry Dash, open a level, pause, and press the `W` button.
-4. Enter the private license key supplied by the administrator. A key binds to the first Windows computer that activates it.
-5. In XDBot, use a GDR/GDR2 macro recorded with Vanilla accuracy, 240 TPS, Frame Offset 0, CBF disabled, and frame fixes disabled. WAYAGO COUNTER ignores frame fixes and analyzes with vanilla physics.
+2. Install `FFmpeg API` v2.0.0 or newer from the Geode index. It is required by the automatic level renderer.
+3. Download `wayago.wayago-counter.geode` from the latest release and place it in the Geometry Dash `geode/mods` folder.
+4. Restart Geometry Dash, open a level, pause, and press the `W` button.
+5. Enter the private license key supplied by the administrator. A key binds to the first Windows computer that activates it.
+6. In XDBot, use a GDR/GDR2 macro recorded with Vanilla accuracy, 240 TPS, Frame Offset 0, CBF disabled, and frame fixes disabled. WAYAGO COUNTER ignores frame fixes and analyzes with vanilla physics.
 
 ## Macro compatibility
 
@@ -19,6 +20,12 @@ This repository distributes signed Windows builds of the private WAYAGO COUNTER 
 For every format, record at 240 Hz with vanilla physics, disable CBF and physics corrections, then verify the complete route with `PLAY` before starting `ANALYZE`. Mega Hack and Silicate compatibility has not been tested as thoroughly as XDBot.
 
 The eight-file timing pack is embedded as trimmed, preloaded PCM WAV audio. No separate sound download is required, alerts avoid MP3 encoder delay, and playback works offline.
+
+## Automatic rendering
+
+After analyzing at least one frame window, press `RENDER` in the WAYAGO popup. The renderer starts the loaded macro from frame zero and exports the level with the active WAYAGO overlay, counters, circles, CPS, precision and watermark. Resolution, FPS, bitrate and a compatible hardware or software encoder are selected automatically.
+
+Rendering uses two deterministic passes: the first captures video, and the second records level music, game SFX and WAYAGO timing alerts through FMOD. FFmpeg API then creates the final MP4 in `Geometry Dash/renders` by default. The renderer is independent from the XDBot runtime.
 
 The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 

@@ -2,6 +2,29 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.4.0] - 2026-08-09
+
+### Added
+
+- Added a standalone automatic level renderer powered by the Geode FFmpeg API v2 event bridge.
+- Added a dedicated `RENDER` action and live video, audio and finalization states to the WAYAGO interface.
+- Added an automatic profile that preserves the display aspect ratio and selects resolution, frame rate, bitrate and a compatible hardware or software encoder from the current system.
+- Added a second deterministic replay pass through FMOD's WAV writer, followed by automatic MP4 audio muxing.
+- Added a configurable render output folder, defaulting to `Geometry Dash/renders`.
+
+### Rendering
+
+- Every exported frame includes the normal WAYAGO playback overlay, frame-window counters, timing circles, CPS, precision and watermark according to the current overlay filters.
+- Rendering starts from a clean frame-zero reset with the macro seed restored and ends only when the level completes.
+- The renderer is independent from XDBot at runtime; XDBot remains only a recommended GDR/GDR2 file source.
+- The bounded encoder queue blocks deterministic capture instead of dropping frames when the encoder is slower than the game.
+
+### Safety
+
+- A dead or divergent replay aborts the render instead of exporting a misleading route.
+- Encoder, OpenGL and audio-pass failures stop cleanly, restore FMOD output and preserve a video-only MP4 when audio muxing alone is unavailable.
+- FFmpeg binaries remain in the separately maintained FFmpeg API dependency and are not duplicated inside the WAYAGO package.
+
 ## [0.3.6] - 2026-08-08
 
 ### Fixed
