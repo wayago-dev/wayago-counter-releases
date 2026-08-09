@@ -2,6 +2,34 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.5.0] - 2026-08-09
+
+### Added
+
+- Added configurable render width, height, frame rate, bitrate and offline video speed.
+- Added a high-quality default render profile: 3840x2160, 60 FPS and 80 Mbps.
+- Added an embedded quick guide covering the complete import, analysis, playback and render workflow.
+
+### Fixed
+
+- FMOD PCM audio is now decoded inside WAYAGO and sent to FFmpeg API as raw stereo samples, avoiding the missing channel-layout failure that produced video-only MP4 files.
+- The video render pass can now advance faster than real time while preserving separate fixed 1/240 physics steps and deterministic frame capture.
+- The frame queue now derives its capacity from a fixed memory budget, preventing 4K renders from allocating hundreds of megabytes of queued frames.
+
+### Analysis
+
+- Automatic windows no longer stop at ten passing frames and report every wider timing as exactly `10`.
+- A dedicated outside-boundary probe now distinguishes exact 10-frame timings from windows wider than the display limit.
+- Windows above 10 frames and gameplay-irrelevant inputs are excluded from circles, sounds, counters and precision instead of inflating the 9-10 bucket.
+- Every press and release is measured as one isolated edge. Ship, wave and swing windows can no longer be widened by shifting an adjacent press or release together with the tested event.
+- Ambiguous 10+ results saved by older builds are hidden until a fresh analysis verifies their real boundary.
+
+### Interface
+
+- Rebuilt the pause popup around one numbered `IMPORT -> ANALYZE -> PLAY -> RENDER` workflow.
+- Consolidated Editor, Settings, Output, Guide and License into one compact utility bar.
+- Status text now separates displayed timings from easy or irrelevant hidden inputs, and Output opens the configured render folder directly.
+
 ## [0.4.1] - 2026-08-09
 
 ### Fixed

@@ -23,9 +23,13 @@ The eight-file timing pack is embedded as trimmed, preloaded PCM WAV audio. No s
 
 ## Automatic rendering
 
-After analyzing at least one frame window, press `RENDER` in the WAYAGO popup. The renderer starts the loaded macro from frame zero and exports the level with the active WAYAGO overlay, counters, circles, CPS, precision and watermark. Resolution, FPS, bitrate and a compatible hardware or software encoder are selected automatically.
+After analyzing at least one exact frame window, press `RENDER` in the WAYAGO popup. The renderer starts the loaded macro from frame zero and exports the level with the active WAYAGO overlay, counters, circles, CPS, precision and watermark. The default profile is 3840x2160 at 60 FPS and 80 Mbps; resolution, frame rate, bitrate, offline video speed and output folder can be changed in Geode's advanced mod settings.
 
-Rendering uses two deterministic passes: the first captures video, and the second records level music, game SFX and WAYAGO timing alerts through FMOD. FFmpeg API then creates the final MP4 in `Geometry Dash/renders` by default. The renderer is independent from the XDBot runtime.
+Rendering uses two deterministic passes: the first captures video faster than real time while retaining independent 240 Hz physics steps, and the second safely records level music, game SFX and WAYAGO timing alerts through FMOD. WAYAGO decodes the FMOD PCM stream internally and sends stereo samples to FFmpeg API, which creates the final MP4 in `Geometry Dash/renders` by default. The renderer is independent from the XDBot runtime.
+
+## In-mod workflow
+
+The pause popup follows one numbered path: `1 IMPORT -> 2 ANALYZE -> 3 PLAY -> 4 RENDER`. `GUIDE` explains the recommended XDBot setup, exact-window policy and render output location. Every input edge is measured independently. Exact 1-10 frame timings are shown; wider easy timings and gameplay-irrelevant inputs are intentionally excluded from circles, sounds, counters and precision.
 
 The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 
