@@ -2,6 +2,27 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.6.0] - 2026-08-09
+
+### Analysis
+
+- Split continuous-mode measurement into a direct horizon ending after the next input edge and a stable horizon that keeps the following recorded edge fixed through the causal control cycle.
+- Kept the stable contiguous PASS range as the displayed frame window, preventing a locally survivable ship or wave offset from inflating the primary circle value when it breaks the next edge.
+- Added adaptive probes beyond narrow closed boundaries to detect separated passing islands without merging them into a false continuous timing window.
+- Added explicit stable/local PASS and FAIL maps to per-input logs so every reported timing can be audited on the same level and click pattern.
+- Replay stalls and checkpoint stalls can no longer be saved as real failed timing boundaries.
+
+### Overlay
+
+- Added optional short English explanations for proven next-edge dependencies, alternate frame alignments and hard mode-transition alignments.
+- Explanations fade in and out during playback and remain separate from the measured number on each circle.
+- Added a native setting to disable timing explanations without changing counters, circles or analysis results.
+
+### Data
+
+- Extended saved analysis projects with local-window bounds, alternate-alignment state and the evidence-backed playback explanation.
+- Explicitly kept CBF and subtick analysis disabled; v0.6.0 remains a vanilla 240 Hz analyzer.
+
 ## [0.5.1] - 2026-08-09
 
 ### Fixed
