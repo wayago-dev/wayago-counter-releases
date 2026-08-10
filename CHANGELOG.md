@@ -2,6 +2,15 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [0.6.1] - 2026-08-10
+
+### Analysis
+
+- Replaced the displayed fixed-neighbor ship, wave, swing and robot range with a conditional decision window that ends after the next input edge.
+- Added a complete secondary boundary scan for conditional windows, so an incomplete diagnostic sample can no longer be saved as an exact result.
+- Retained the longer fixed-continuation range as dependency evidence without charging the same coupled alignment to multiple adjacent inputs.
+- Added project schema v3 fields for the fixed-continuation range and a deterministic unit test for contiguous PASS-window boundary math.
+
 ## [0.6.0] - 2026-08-09
 
 ### Analysis

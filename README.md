@@ -33,7 +33,7 @@ The pause popup follows one numbered path: `1 IMPORT -> 2 ANALYZE -> 3 PLAY -> 4
 
 The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 
-During PLAY, v0.6.0 can show brief English timing explanations when the same macro's analysis proves a next-edge dependency, a separated alternate alignment, or a hard mode-transition alignment. The measured circle remains the stable contiguous PASS range. These notes never compare frame-window totals from different levels, and CBF/subtick analysis remains disabled.
+During PLAY, v0.6.1 can show brief English timing explanations when the same macro's analysis proves a next-edge dependency, a separated alternate alignment, or a hard mode-transition alignment. Ship, wave, swing and robot circles use the complete conditional decision window ending after the next input edge; the longer fixed-continuation result remains dependency evidence and is not charged to both neighboring inputs. These notes never compare frame-window totals from different levels, and CBF/subtick analysis remains disabled.
 
 ## Access
 
