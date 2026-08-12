@@ -2,6 +2,20 @@
 
 All notable WAYAGO COUNTER changes are documented here in English. Versions follow Semantic Versioning.
 
+## [1.0.0] - 2026-08-12
+
+### Analysis
+
+- ANALYZE now processes every imported press and release; the old first-N setting is removed and ignored in existing settings files.
+- Exact windows require closed physical failure boundaries and matching required interactions.
+- Unverified external completion calls no longer split valid windows; completion provenance is scoped and consumed per active level.
+- Bounded dependency budget exhaustion remains unknown instead of becoming a false exact timing.
+- Windows wider than 10 frames remain classified as easy and hidden from automatic timing output.
+
+### Interface
+
+- Standardized the workflow as `IMPORT -> PLAY -> ANALYZE -> RENDER`.
+
 ## [0.6.1] - 2026-08-10
 
 ### Analysis

@@ -17,7 +17,7 @@ This repository distributes signed Windows builds of the private WAYAGO COUNTER 
 - Mega Hack Replay `.mhr.json` and `.mhr` import is experimental.
 - Silicate v3 `.slc` import is experimental.
 
-For every format, record at 240 Hz with vanilla physics, disable CBF and physics corrections, then verify the complete route with `PLAY` before starting `ANALYZE`. Mega Hack and Silicate compatibility has not been tested as thoroughly as XDBot.
+For every format, record at 240 Hz with vanilla physics, disable CBF and physics corrections, then follow `IMPORT -> PLAY -> ANALYZE -> RENDER`. Mega Hack and Silicate compatibility has not been tested as thoroughly as XDBot.
 
 The eight-file timing pack is embedded as trimmed, preloaded PCM WAV audio. No separate sound download is required, alerts avoid MP3 encoder delay, and playback works offline.
 
@@ -29,11 +29,11 @@ Rendering uses two deterministic passes: the first captures video faster than re
 
 ## In-mod workflow
 
-The pause popup follows one numbered path: `1 IMPORT -> 2 ANALYZE -> 3 PLAY -> 4 RENDER`. `GUIDE` explains the recommended XDBot setup, exact-window policy and render output location. Every input edge is measured independently. Exact 1-10 frame timings are shown; wider easy timings and gameplay-irrelevant inputs are intentionally excluded from circles, sounds, counters and precision.
+The pause popup follows one numbered path: `1 IMPORT -> 2 PLAY -> 3 ANALYZE -> 4 RENDER`. `GUIDE` explains the recommended XDBot setup, exact-window policy and render output location. ANALYZE processes every imported press and release; there is no first-N event limit. Exact 1-10 frame timings are shown, while wider easy timings and gameplay-irrelevant inputs are intentionally excluded from circles, sounds, counters and precision.
 
 The in-mod updater accepts only release metadata signed by the WAYAGO license server and verifies the exact package SHA-256 before installation. Release DLLs ship without PDB/COFF symbols, expose only the Geode entry point, protect private protocol literals, and enable Windows CFG, EH continuation, CET, ASLR and DEP metadata.
 
-During PLAY, v0.6.1 can show brief English timing explanations when the same macro's analysis proves a next-edge dependency, a separated alternate alignment, or a hard mode-transition alignment. Ship, wave, swing and robot circles use the complete conditional decision window ending after the next input edge; the longer fixed-continuation result remains dependency evidence and is not charged to both neighboring inputs. These notes never compare frame-window totals from different levels, and CBF/subtick analysis remains disabled.
+During PLAY, v1.0.0 can show brief English timing explanations when the same macro's analysis proves a bounded dependency or a separated alternate alignment. Exact windows require closed physical failure boundaries and matching required interactions. Exhausted dependency searches remain unknown instead of becoming false exact windows. CBF/subtick analysis remains disabled.
 
 ## Access
 
